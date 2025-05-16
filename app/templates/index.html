@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}
+Strona Główna
+{% endblock %}
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 class="display-6 text-dark">CeneoWebScraper</h1>
+            <p class="lead text-dark">Aplikacja do pobierania opinii i ocen produktów z serwisu Ceneo</p>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-md-12">
+            <h2 class="h3 text-dark">Cel aplikacji</h2>
+            <p class="text-dark">CeneoWebScraper to aplikacja służąca do ekstrakcji opinii i ocen produktów dostępnych na platformie Ceneo. Celem aplikacji jest umożliwienie użytkownikowi uzyskania szczegółowych informacji o produktach, takich jak średnia ocena, liczba recenzji, wady i zalety. Dzięki tej aplikacji, użytkownicy mogą szybko i wygodnie zebrać informacje o interesujących ich produktach oraz przeanalizować opinie innych użytkowników, co wspomaga podjęcie świadomej decyzji zakupowej.</p>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-md-12">
+            <h2 class="h3 text-dark">Opis działania aplikacji</h2>
+            <p class="text-dark">CeneoWebScraper działa w prosty sposób. Wystarczy, że użytkownik poda unikalne ID produktu, aby aplikacja automatycznie pobrała wszystkie dostępne opinie i oceny dla tego produktu. Użytkownik może następnie zobaczyć szczegółową tabelę z opiniami, a także filtrować i sortować je według różnych kryteriów, takich jak data zakupu, oceny, autor czy rekomendacja. Aplikacja umożliwia także pobieranie tych danych w formatacie JSON oraz generowanie wykresów, które przedstawiają statystyki dotyczące opinii o produkcie.</p>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-12 d-flex justify-content-center">
+            <img src="{{ url_for('static', filename='uploads/aplication_aim.webp') }}" 
+                 class="img-fluid rounded shadow" 
+                 alt="cel aplikacji" style="max-width: 70%; height: auto;">
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-md-12">
+            <h2 class="h3 text-dark">Zastosowane biblioteki</h2>
+            <p class="text-dark">Aplikacja wykorzystuje kilka popularnych bibliotek, które umożliwiają skuteczne pobieranie, przetwarzanie i wyświetlanie danych. Wśród najważniejszych bibliotek znajdują się:</p>
+            <ul class="text-dark">
+                <li><strong>Flask</strong> – lekkie framework do tworzenia aplikacji webowych w Pythonie, które pozwala na łatwe zarządzanie routingiem i obsługą zapytań HTTP.</li>
+                <li><strong>Requests</strong> – biblioteka do obsługi zapytań HTTP, która umożliwia łatwe pobieranie danych z Ceneo.</li>
+                <li><strong>Bootstrap</strong> – framework CSS, który pomaga tworzyć responsywne i estetyczne interfejsy użytkownika. Dzięki niemu aplikacja działa płynnie na różnych urządzeniach.</li>
+                <li><strong>Jinja2</strong> – silnik szablonów używany przez Flask, pozwalający na dynamiczne generowanie HTML na podstawie danych z backendu.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-md-12">
+            <h2 class="h3 text-dark">Zastosowane podejścia</h2>
+            <p class="text-dark">W aplikacji zastosowano kilka kluczowych podejść, które wpływają na jej funkcjonalność i wydajność:</p>
+            <ul class="text-dark">
+                <li><strong>Web Scraping</strong> – głównym podejściem w aplikacji jest web scraping, czyli technika automatycznego zbierania danych z internetu. Aplikacja wykorzystuje bibliotekę BeautifulSoup do parsowania stron Ceneo i zbierania danych o produktach.</li>
+                <li><strong>Responsywność</strong> – dzięki zastosowaniu Bootstrapa, aplikacja jest w pełni responsywna, co oznacza, że działa płynnie na różnych urządzeniach, od komputerów po smartfony.</li>
+                <li><strong>Sortowanie i filtrowanie danych</strong> – aplikacja umożliwia użytkownikowi filtrowanie i sortowanie danych o opiniach według różnych kryteriów, takich jak data zakupu, ocena produktu, czy autor opinii.</li>
+                <li><strong>Analiza danych</strong> – aplikacja generuje wykresy kołowe i słupkowe, które wizualizują rozkład rekomendacji oraz liczbę opinii o różnych ocenach gwiazdkowych. Pozwala to użytkownikom na szybsze zrozumienie ogólnego obrazu opinii o produkcie.</li>
+                <li><strong>Eksport danych</strong> – użytkownicy mogą pobierać dane w popularnym formacie takim jak JSON, co pozwala na dalszą analizę danych lub ich przechowywanie.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

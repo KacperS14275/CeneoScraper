@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <title>Ceneo.pl web scraper</title>
+</head>
+<body>
+  <header class="bg-dark text-white p-3">
+    <div class="container">
+      <h1>Ceneo.pl Web Scraper</h1>
+    </div>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-0">
+        <div class="container-fluid px-3">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Przełącz nawigację">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav d-flex flex-row gap-3 ms-0">
+                    <li class="nav-item d-flex align-items-center">
+                        <a class="nav-link d-flex align-items-center" href="{{ url_for('index') }}">
+                            <img src="{{ url_for('static', filename='icons/home_icon.png') }}" alt="home" width="25" height="25" class="me-2">
+                            Strona Główna
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <a class="nav-link d-flex align-items-center" href="{{ url_for('display_form') }}">
+                            <img src="{{ url_for('static', filename='icons/extract_icon.png') }}" alt="extract" width="25" height="25" class="me-2">
+                            Ekstrakcja Opinii
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <a class="nav-link d-flex align-items-center" href="{{ url_for('products') }}">
+                            <img src="{{ url_for('static', filename='icons/list_icon.png') }}" alt="list" width="25" height="25" class="me-2">
+                            Lista Produktów
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <a class="nav-link d-flex align-items-center" href="{{ url_for('author') }}">
+                            <img src="{{ url_for('static', filename='icons/author_icon.png') }}" alt="author" width="25" height="25" class="me-2">
+                            O Autorze
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  <section class="container">
+    <div class="row">
+      <h2 class="col text-center">
+        {% block title %}
+        {% endblock %}
+      </h2>
+    </div>
+    <div class="row">
+      <div class="col">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div>
+  </section>
+  <!-- <section class="container mt-4">
+    <h2>O projekcie</h2>
+    <p>Cel aplikacji: Automatyczne pobieranie opinii o produktach z serwisu Ceneo.pl.</p>
+    <p>Opis działania aplikacji: Użytkownik może wprowadzić identyfikator produktu, aby pobrać opinie, przeglądać listę produktów oraz analizować dane w formie tabel i wykresów.</p>
+    <p>Zastosowane biblioteki: Flask, Bootstrap, Pandas, Matplotlib.</p>
+    <p>Zastosowane podejścia: REST API, dynamiczne generowanie stron HTML, analiza danych.</p>
+  </section> -->
+  <footer class="bg-dark text-white text-center p-3 mt-4">
+    <p>&copy; 2025 Kacper Skoczeń</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>
