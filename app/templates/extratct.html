@@ -1,26 +1,23 @@
-    {% extends 'base.html' %}
+{% extends 'base.html' %}
+{% block title %}
+Ekstrakcja opinii o produkcie :>>
+{% endblock %}
 
-    {% block title %}
-        Ekstrakcja opinii o produkcie
-    {% endblock %}
-
-    {% block content %}
-      <form class="row g-3">
-        <div class="col-auto">
-          <label for="staticEmail2" class="visually-hidden">Email</label>
-          <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+{% block content %}
+{% if error is defined %}
+    <p>{{error}}</p>
+{% endif %}
+<form class="container mt-3 mb-3" method="post" action="{{url_for('extract_data')}}">
+    <div class="row d-flex align-items-baseline">
+        <div class="col d-flex justify-content-end">
+            <label for="product_id" class="form-label">Prosze podać kod produktu</label>
         </div>
-        <div class="col-auto">
-          <label for="inputPassword2" class="visually-hidden">Password</label>
-          <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+        <div class="col d-flex">
+            <input type="text" class="form-control" name="product_id" id="product_id" placeholder="Kod produktu" required>
         </div>
-        <div class="col-auto">
-          <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+        <div class="col d-flex">
+            <button type="submit" class="btn btn-ceneo">Pobierz opinie</button>
         </div>
-        <div class="col-auto">
-          <label for="uploadPhoto" class="form-label">Upload Photo</label>
-          <input type="file" class="form-control" id="uploadPhoto">
-        </div>
-        </form>
-    {% endblock %}
-
+    </div>
+</form>
+{% endblock %}
